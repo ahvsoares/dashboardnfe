@@ -1,8 +1,35 @@
+import os
+import gdown
+import zipfile
 import json
 import numpy as np
 import pandas as pd
 import altair as alt
 import streamlit as st
+
+# Download e descompactação das bases
+URL_NFE = "https://drive.google.com/uc?id=1eTAaOQkO6RT37XHOnR7bP6hBlwu-JLBB"
+FILENAME_NFE = "202401_NFe.zip"
+gdown.download(URL_NFE, FILENAME_NFE, quiet=False)
+with zipfile.ZipFile(FILENAME_NFE, 'r') as zip_ref:
+    zip_ref.extractall()
+os.remove(FILENAME_NFE)
+
+URL_ESTADOS = "https://drive.google.com/uc?id=1ieqNEa1Fbb4I87OghPXS-Scn2a_Zva8t"
+FILENAME_ESTADOS = "br_states.zip"
+gdown.download(URL_ESTADOS, FILENAME_ESTADOS, quiet=False)
+with zipfile.ZipFile(FILENAME_ESTADOS, 'r') as zip_ref:
+    zip_ref.extractall()
+os.remove(FILENAME_ESTADOS)
+
+URL_COORDS = "https://drive.google.com/uc?id=1c9THXE6MX0VgA3kcwTFvKt4JJpIEddy_"
+FILENAME_COORDS = "lat-long-capitais.zip"
+gdown.download(URL_COORDS, FILENAME_COORDS, quiet=False)
+with zipfile.ZipFile(FILENAME_COORDS, 'r') as zip_ref:
+    zip_ref.extractall()
+os.remove(FILENAME_COORDS)
+
+# Agora iniciamos a aplicação
 
 st.set_page_config(
     page_title="Dashboard NF-e",
