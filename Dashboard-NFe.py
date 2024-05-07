@@ -146,7 +146,7 @@ def formata_numero(valor, prefixo = ''):
         if valor < 1_000:
             return f'{prefixo} {valor:.2f} {unidade}'
         valor /= 1_000
-    return f'{prefixo} {valor:.2f} milhões'
+    return f'{prefixo} {valor:.2f} bilhões'
 
 col1, col2 = st.columns(2)
 
