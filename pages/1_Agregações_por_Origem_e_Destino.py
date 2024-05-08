@@ -69,7 +69,7 @@ with tab2:
                             alt.ColorValue('lightblue'),
                             alt.Color(shorthand=y_column,
                                         type='quantitative',
-                                        scale=alt.Scale(scheme='reds'),
+                                        scale=alt.Scale(scheme='lightmulti', type='log', base=2, nice=True),
                                         title=legenda_eixo_y[add_radio])
         ),
         tooltip=[alt.Tooltip(field='sigla_uf', title='Estado'),
