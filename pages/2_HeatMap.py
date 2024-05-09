@@ -25,7 +25,7 @@ rect = alt.Chart(
     alt.Y('uf_orig:N').title('UF Origem'),
     alt.Color('valor:Q').scale(scheme='lightmulti', reverse=False, 
                                type='sqrt', nice=True,
-                               domainMid=100000000,).title('Valor Total NFe'),
+                               domainMid=100000000).title('Valor Total NFe'),
     tooltip=[alt.Tooltip(field='uf_dest', title='UF Destino'),
             alt.Tooltip(field='uf_orig', title='UF Origem'),
             alt.Tooltip(field='valor', title='Valor Total NF-e',

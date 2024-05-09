@@ -51,12 +51,13 @@ with tab2:
     heatmap = alt.Chart(df_diahora).mark_rect().encode(
         x='dia_emissao:O',
         y='hora_emissao:O',
-        color='qtde:Q',
+        color=alt.Color('qtde:Q').scale(scheme='lightmulti', reverse=False, 
+                            type='linear', nice=True, domainMid=1000),
         tooltip=['dia_emissao', 'hora_emissao', 'qtde']
     ).properties(
         title="Quantidade de Notas Emitidas por Dia e Hora",
-        width=600,
-        height=400
+        width=800,
+        height=500
     )
 
     # Exibindo o mapa
@@ -76,7 +77,7 @@ with tab3:
         color='dia_semana:N'
     ).properties(
         title="Quantidade de Notas Emitidas por Dia da Semana e Hora",
-        width=600,
+        width=800,
         height=400
     )
 
