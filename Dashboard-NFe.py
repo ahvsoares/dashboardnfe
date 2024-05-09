@@ -43,7 +43,7 @@ st.set_page_config(
     layout='wide'
 )
 
-st.write("# Painel da NF-e")
+st.write("# Estatísticas sobre NF-e")
 
 st.sidebar.success("Escolha uma das visualizações acima.")
 
@@ -238,20 +238,28 @@ def formata_numero(valor, prefixo = ''):
         valor /= 1_000
     return f'{prefixo} {valor:.2f} trilhões'
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.metric('Total de NF-e emitidas no período', formata_numero(df_nfe.shape[0]))
-    st.metric('Valor total de vendas no período', formata_numero(df_nfe['VALOR NOTA FISCAL'].sum(), 'R$'))
+    st.metric('Total de NF-e emitidas', formata_numero(df_nfe.shape[0]))
+    st.metric('Valor total de vendas', formata_numero(df_nfe['VALOR NOTA FISCAL'].sum(), 'R$'))
 
 with col2:
-    st.metric('Total de itens vendidos no período', formata_numero(df_item['QUANTIDADE'].sum()))
+    st.metric('Total de itens vendidos', formata_numero(df_item['QUANTIDADE'].sum()))
+    st.metric('Quantidade de empresas emissoras', formata_numero(len(df_nfe['CPF/CNPJ Emitente'].unique())))
 
+with col3:
+    st.metric('Média de itens vendidos por NF-e', formata_numero(df_item['QUANTIDADE'].sum()/df_nfe.shape[0]))
+    st.metric('Quantidade de códigos NCM distintos', formata_numero(len(df_item['CÓDIGO NCM/SH'].unique())))
 
-'''
-Para sexta, podemos colocar ali dashboard:
- - média de itens por nota
- - qtde de empresas emissoras
- - qtde de NCM
- like 2
-'''
+st.markdown('---')
+
+st.markdown(
+    """
+    #### Algumas perguntas que queremos responder analisando-se este *dashboard*:
+    * quais são os estados mais vendedores?
+    * quais são os estados mais compradores?
+    * qual é o fluxo monetário interestadual?
+    * qual é o fluxo monetário interestadual a partir de uma UF?
+    * como se dá a emissão de NF-e ao longo do mês?
+    """)
