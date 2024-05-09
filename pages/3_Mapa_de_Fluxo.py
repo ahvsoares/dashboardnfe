@@ -8,6 +8,11 @@ st.set_page_config(
 
 st.markdown("## Mapa do Fluxo de Produtos das NF-e")
 
+st.markdown(
+    """
+    Este gráfico ajuda a responder a seguinte pergunta: qual é o fluxo interestadual de produtos a partir de uma UF?
+    """)
+
 df_capitais = st.session_state["df_capitais"]
 data_geojson = st.session_state["data_geojson"]
 df_consolidado = st.session_state["df_consolidado"]

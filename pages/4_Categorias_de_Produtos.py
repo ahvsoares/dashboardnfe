@@ -16,6 +16,12 @@ df_maior_soma_por_uf = st.session_state["df_maior_soma_por_uf"]
 tab1, tab2 = st.tabs(['Mapa Produto mais Vendido por UF', 'Sumarização UF/Produto'])
 
 with tab1:
+
+    st.markdown(
+        """
+        Este gráfico ajuda a responder a seguinte pergunta: qual é o tipo de produto mais vendido por UF?
+        """)
+    
     # Cria o mapa
     mapa_secao_altair = alt.Chart(
         data = df_maior_soma_por_uf,
@@ -53,7 +59,11 @@ with tab1:
 
 with tab2:
 
-    # tab1, tab2 = st.tabs(['Qtde Notas por UF e Produto', 'Valor Notas por UF e Produto'])
+    st.markdown(
+        """
+        Este gráfico ajuda a responder a seguinte pergunta: qual é o panorama de quantidade de notas emitas por UF e tipo de produto?
+        """)
+    
     col1, col2 = st.columns(2)
 
     # Cria dataframe com a quantidade de notas emitidas por UF e tipo de produto

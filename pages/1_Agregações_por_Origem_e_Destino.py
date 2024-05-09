@@ -16,6 +16,13 @@ tab1, tab2 = st.tabs(["Histograma", "Mapas"])
 
 with tab1:
 
+    st.markdown(
+        """
+        Este gráfico ajuda a responder as seguintes perguntas:
+        * quais são os Estados mais compradores?
+        * quais são os Estados mais vendedores?
+        """)
+
     rotulos_radio = ['Quantidade de NF-e emitidas por UF do Emissor',
                      'Total (R$) das NF-e emitidas por UF do Emissor',
                      'Quantidade de NF-e emitidas para a UF de Destino',
@@ -54,6 +61,13 @@ with tab1:
     st.altair_chart(hist_qtd_total_nfe)
 
 with tab2:
+
+    st.markdown(
+        """
+        Este gráfico ajuda a responder as seguintes perguntas:
+        * quais são os Estados mais compradores?
+        * quais são os Estados mais vendedores?
+        """)
 
     highlight = alt.selection_point(nearest=False, fields=['sigla_uf'], empty=False)
 

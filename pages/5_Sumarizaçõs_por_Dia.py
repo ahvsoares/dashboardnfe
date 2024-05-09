@@ -15,6 +15,12 @@ df_nfe = st.session_state["df_nfe"]
 tab1, tab2, tab3 = st.tabs(["Histograma NF-e por dia", "Mapa de Calor", "Gráfico de Linhas"])
 
 with tab1:
+
+    st.markdown(
+        """
+        Este gráfico ajuda a responder a seguinte pergunta: como se dá a emissão de NF-e ao longo do mês?
+        """)
+    
     FORMATO_DATA = '%d/%m/%Y %H:%M:%S'
     df_nfe['dh_emissao_format'] = pd.to_datetime(df_nfe['DATA EMISSÃO'], format=FORMATO_DATA)
     df_nfe['dia_emissao'] = df_nfe['dh_emissao_format'].apply(lambda x: "%d" % (x.day))
@@ -41,6 +47,12 @@ with tab1:
     st.altair_chart(hist_total_nfe_dia)
 
 with tab2:
+
+    st.markdown(
+        """
+        Este gráfico ajuda a responder a seguinte pergunta: como se dá a emissão de NF-e ao longo do mês?
+        """)
+    
     # Cria campo com a hora de emissão
     df_nfe['hora_emissao'] = df_nfe['dh_emissao_format'].dt.hour
 
@@ -64,6 +76,12 @@ with tab2:
     st.altair_chart(heatmap)
 
 with tab3:
+
+    st.markdown(
+        """
+        Este gráfico ajuda a responder a seguinte pergunta: como se dá a emissão de NF-e ao longo do mês?
+        """)
+    
     # Cria campo com o dia da semana
     df_nfe['dia_semana'] = df_nfe['dh_emissao_format'].dt.dayofweek.map({0: 'Segunda', 1: 'Terça', 2: 'Quarta', 3: 'Quinta', 4: 'Sexta', 5: 'Sábado', 6: 'Domingo'})
 

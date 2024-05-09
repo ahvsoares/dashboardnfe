@@ -9,6 +9,13 @@ st.set_page_config(
 
 st.markdown("## HeatMap Interativo UF Origem x UF Destino")
 
+st.markdown(
+    """
+    Estes gráficos ajudam a responder as seguintes perguntas:
+    * qual é o fluxo interestadual monetário ?
+    * qual é o fluxo interestadual monetário a partir de uma UF?
+    """)
+
 df_nfe = st.session_state["df_nfe"]
 labels = st.session_state["labels"]
 

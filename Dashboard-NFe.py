@@ -257,9 +257,12 @@ st.markdown('---')
 st.markdown(
     """
     #### Algumas perguntas que queremos responder analisando-se este *dashboard*:
-    * quais são os estados mais vendedores?
-    * quais são os estados mais compradores?
-    * qual é o fluxo monetário interestadual?
-    * qual é o fluxo monetário interestadual a partir de uma UF?
+    * quais são os Estados mais vendedores?
+    * quais são os Estados mais compradores?
+    * qual é o fluxo interestadual monetário ?
+    * qual é o fluxo interestadual monetário a partir de uma UF?
+    * qual é o fluxo interestadual de produtos a partir de uma UF?
+    * qual é o tipo de produto mais vendido por UF?
+    * qual é o panorama de quantidade de notas emitas por UF e tipo de produto?
     * como se dá a emissão de NF-e ao longo do mês?
     """)
