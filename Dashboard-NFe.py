@@ -44,6 +44,11 @@ st.set_page_config(
 )
 
 st.write("# Estatísticas sobre NF-e")
+st.write('''
+         **O *dataset* utilizado corresponde a um subconjunto de NF-e emitidas ao longo do mês de janeiro de 2024, 
+         referentes a compras realizadas exclusivamente por órgãos públicos e disponibilizadas no 
+         [Portal da Transparência](https://portaldatransparencia.gov.br/download-de-dados/notas-fiscais).**
+         ''')
 
 st.sidebar.success("Escolha uma das visualizações acima.")
 
