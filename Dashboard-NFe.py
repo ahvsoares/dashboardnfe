@@ -27,13 +27,13 @@ if not os.path.exists(FILENAME_ESTADOS):
         zip_ref.extractall()
 # os.remove(FILENAME_ESTADOS)
 
-URL_COORDS = "https://drive.google.com/uc?id=1c9THXE6MX0VgA3kcwTFvKt4JJpIEddy_"
-FILENAME_COORDS = "lat-long-capitais.zip"
-if not os.path.exists(FILENAME_COORDS):
-    gdown.download(URL_COORDS, FILENAME_COORDS, quiet=False)
-    with zipfile.ZipFile(FILENAME_COORDS, 'r') as zip_ref:
-        zip_ref.extractall()
-# os.remove(FILENAME_COORDS)
+# URL_COORDS = "https://drive.google.com/uc?id=1c9THXE6MX0VgA3kcwTFvKt4JJpIEddy_"
+# FILENAME_COORDS = "lat-long-capitais.zip"
+# if not os.path.exists(FILENAME_COORDS):
+#     gdown.download(URL_COORDS, FILENAME_COORDS, quiet=False)
+#     with zipfile.ZipFile(FILENAME_COORDS, 'r') as zip_ref:
+#         zip_ref.extractall()
+# # os.remove(FILENAME_COORDS)
 
 
 ## Agora iniciamos a aplicação
